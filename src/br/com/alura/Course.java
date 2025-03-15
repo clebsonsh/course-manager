@@ -29,4 +29,13 @@ public class Course {
     public void addLesson(Lesson lesson) {
         this.lessons.add(lesson);
     }
+
+    public int getTotalTime() {
+        return this.lessons.stream().mapToInt(Lesson::getTime).sum();
+    }
+
+    @Override
+    public String toString() {
+        return "[Course: " + this.name + ", total time: " + this.getTotalTime() + ", Lessons: " + this.getLessons() + "]";
+    }
 }
