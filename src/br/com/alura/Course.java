@@ -1,13 +1,12 @@
 package br.com.alura;
 
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Course {
     private String name;
     private String instructor;
     private List<Lesson> lessons = new LinkedList<>();
+    private Set<Student> students = new HashSet<>();
 
     public Course(String name, String instructor) {
         this.name = name;
@@ -28,6 +27,14 @@ public class Course {
 
     public void addLesson(Lesson lesson) {
         this.lessons.add(lesson);
+    }
+
+    public Set<Student> getStudents() {
+        return Collections.unmodifiableSet(this.students);
+    }
+
+    public void addStudent(Student student) {
+        this.students.add(student);
     }
 
     public int getTotalTime() {
