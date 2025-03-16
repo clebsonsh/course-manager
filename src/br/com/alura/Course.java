@@ -37,6 +37,10 @@ public class Course {
         this.students.add(student);
     }
 
+    public boolean isStudentRegistered(Student student) {
+        return this.students.contains(student);
+    }
+
     public int getTotalTime() {
         return this.lessons.stream().mapToInt(Lesson::getTime).sum();
     }

@@ -18,5 +18,14 @@ public class StudentFactory {
 
         System.out.println("All students registered for this course:");
         javaCollections.getStudents().forEach(System.out::println);
+
+        System.out.println("Student " + s1 + " registered for this course:");
+        System.out.println(javaCollections.isStudentRegistered(s1));
+
+        Student turini = new Student("Rodrigo Turini", 34673);
+
+        System.out.println("Student s1 = Turini?");
+        System.out.println(s1.equals(turini));
+        System.out.println(s1.hashCode() == turini.hashCode());
     }
 }
